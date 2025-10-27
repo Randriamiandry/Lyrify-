@@ -1,0 +1,597 @@
+:root {
+    --primary-bg: #0a0a0a;
+    --secondary-bg: #111111;
+    --card-bg: #1a1a1a;
+    --border-color: #333333;
+    --text-primary: #ffffff;
+    --text-secondary: #a0a0a0;
+    --text-muted: #666666;
+    --accent-color: #10a37f;
+    --accent-hover: #0d8c6c;
+    --gradient: linear-gradient(135deg, #10a37f, #1abc9c);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    -webkit-tap-highlight-color: transparent;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    line-height: 1.5;
+    color: var(--text-primary);
+    background: var(--primary-bg);
+    min-height: 100vh;
+}
+
+.container {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Header */
+.android-header {
+    background: var(--secondary-bg);
+    border-bottom: 1px solid var(--border-color);
+    padding: 12px 16px;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-weight: 700;
+    font-size: 1.25rem;
+    justify-content: center;
+}
+
+.logo-text {
+    background: var(--gradient);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+/* Main Content */
+.android-main {
+    flex: 1;
+    padding: 20px 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+/* Hero Section */
+.hero-section {
+    text-align: center;
+}
+
+.hero-title {
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 12px;
+}
+
+.gradient-text {
+    background: var(--gradient);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.hero-subtitle {
+    font-size: 1.1rem;
+    color: var(--text-secondary);
+    margin-bottom: 30px;
+}
+
+/* Search */
+.search-container {
+    width: 100%;
+    margin: 0 auto;
+}
+
+.search-box {
+    background: var(--card-bg);
+    border: 1px solid var(--border-color);
+    border-radius: 16px;
+    margin-bottom: 20px;
+    display: flex;
+    padding: 4px;
+}
+
+.search-box:focus-within {
+    border-color: var(--accent-color);
+}
+
+#searchInput {
+    flex: 1;
+    background: transparent;
+    border: none;
+    color: var(--text-primary);
+    font-size: 16px;
+    padding: 16px;
+    outline: none;
+}
+
+#searchInput::placeholder {
+    color: var(--text-muted);
+}
+
+.search-button {
+    background: var(--gradient);
+    color: white;
+    border: none;
+    border-radius: 12px;
+    padding: 12px;
+    cursor: pointer;
+    min-width: 56px;
+    min-height: 56px;
+}
+
+.example-tags {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.example-tag {
+    background: var(--secondary-bg);
+    color: var(--text-secondary);
+    padding: 10px 16px;
+    border-radius: 20px;
+    font-size: 14px;
+    border: 1px solid var(--border-color);
+    cursor: pointer;
+}
+
+/* Results */
+.results-section {
+    display: none;
+    flex: 1;
+}
+
+.song-card {
+    background: var(--card-bg);
+    border: 1px solid var(--border-color);
+    border-radius: 16px;
+    overflow: hidden;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.song-header {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.song-info {
+    display: flex;
+    gap: 16px;
+    align-items: flex-start;
+}
+
+.album-cover {
+    width: 80px;
+    height: 80px;
+    flex-shrink: 0;
+}
+
+.album-cover img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 12px;
+    display: none;
+}
+
+.image-placeholder {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--secondary-bg);
+    border: 2px dashed var(--border-color);
+    border-radius: 12px;
+    color: var(--text-muted);
+}
+
+.song-details {
+    flex: 1;
+}
+
+.song-title {
+    font-size: 1.25rem;
+    font-weight: 700;
+    margin-bottom: 6px;
+}
+
+.artist-name {
+    font-size: 1rem;
+    color: var(--accent-color);
+    font-weight: 500;
+}
+
+.copy-button {
+    background: var(--secondary-bg);
+    color: var(--text-primary);
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    padding: 12px 20px;
+    font-weight: 500;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    width: 100%;
+}
+
+/* Lyrics */
+.lyrics-section {
+    padding: 0 20px 20px;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.lyrics-container {
+    background: var(--secondary-bg);
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    overflow: hidden;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.lyrics-content {
+    padding: 20px;
+    color: var(--text-primary);
+    font-size: 15px;
+    line-height: 1.6;
+    white-space: pre-wrap;
+    margin: 0;
+    flex: 1;
+    overflow-y: auto;
+}
+
+.lyrics-content::-webkit-scrollbar {
+    width: 6px;
+}
+
+.lyrics-content::-webkit-scrollbar-track {
+    background: var(--secondary-bg);
+}
+
+.lyrics-content::-webkit-scrollbar-thumb {
+    background: var(--accent-color);
+    border-radius: 3px;
+}
+
+.lyrics-content::-webkit-scrollbar-thumb:hover {
+    background: var(--accent-hover);
+}
+
+/* History */
+.history-section {
+    padding: 20px 0;
+    background: var(--secondary-bg);
+    margin: 0 -16px;
+    padding-left: 16px;
+    padding-right: 16px;
+}
+
+.history-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.history-header h3 {
+    font-size: 1.25rem;
+    font-weight: 700;
+}
+
+.clear-history-btn {
+    background: transparent;
+    color: var(--text-secondary);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    padding: 8px 16px;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+.history-list {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    max-height: 200px;
+    overflow-y: auto;
+}
+
+.history-item {
+    background: var(--card-bg);
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    padding: 16px;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.history-song {
+    font-weight: 500;
+    flex: 1;
+}
+
+.history-date {
+    color: var(--text-muted);
+    font-size: 12px;
+    margin-left: 10px;
+}
+
+.no-history {
+    text-align: center;
+    color: var(--text-muted);
+    padding: 40px 20px;
+    border: 2px dashed var(--border-color);
+    border-radius: 12px;
+    font-style: italic;
+}
+
+/* === IMPROVED FOOTER === */
+.android-footer {
+    background: var(--secondary-bg);
+    border-top: 1px solid var(--border-color);
+    padding: 30px 16px;
+    text-align: center;
+}
+
+.footer-content {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.footer-section {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    align-items: center;
+}
+
+.footer-text {
+    color: var(--text-muted);
+    font-size: 14px;
+    margin: 0;
+}
+
+.portfolio-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    color: var(--accent-color);
+    text-decoration: none;
+    font-weight: 500;
+    padding: 8px 16px;
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    transition: all 0.3s ease;
+    background: var(--card-bg);
+}
+
+.portfolio-link:hover {
+    background: var(--accent-color);
+    color: white;
+    border-color: var(--accent-color);
+    transform: translateY(-2px);
+}
+
+/* Social links */
+.social-links {
+    display: flex;
+    gap: 16px;
+    align-items: center;
+}
+
+.social-link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 44px;
+    height: 44px;
+    background: var(--card-bg);
+    border: 1px solid var(--border-color);
+    border-radius: 50%;
+    color: var(--text-secondary);
+    text-decoration: none;
+    transition: all 0.3s ease;
+    font-size: 18px;
+}
+
+.social-link:hover {
+    background: var(--accent-color);
+    color: white;
+    border-color: var(--accent-color);
+    transform: translateY(-2px);
+}
+
+/* Specific icons */
+.social-link .fa-facebook-f { font-size: 16px; }
+.social-link .fa-github { font-size: 18px; }
+.social-link .fa-linkedin-in { font-size: 16px; }
+.social-link .fa-twitter { font-size: 16px; }
+
+/* Notification */
+.android-notification {
+    position: fixed;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%) translateY(100px);
+    background: var(--card-bg);
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    padding: 16px 24px;
+    color: var(--text-primary);
+    opacity: 0;
+    transition: all 0.3s ease;
+    z-index: 1000;
+    font-weight: 500;
+    max-width: 90%;
+    text-align: center;
+}
+
+.android-notification.show {
+    opacity: 1;
+    transform: translateX(-50%) translateY(0);
+}
+
+.android-notification.success {
+    border-color: var(--accent-color);
+    background: rgba(16, 163, 127, 0.9);
+}
+
+.android-notification.error {
+    border-color: #dc2626;
+    background: rgba(220, 38, 38, 0.9);
+}
+
+/* === RESPONSIVE === */
+@media (max-width: 480px) {
+    .android-main {
+        padding: 16px 12px;
+        gap: 16px;
+    }
+
+    .hero-title {
+        font-size: 1.75rem;
+    }
+    
+    .song-info {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .album-cover {
+        align-self: center;
+    }
+
+    .song-header, .lyrics-section {
+        padding: 16px;
+    }
+
+    .lyrics-content {
+        padding: 16px;
+        font-size: 14px;
+    }
+
+    /* Footer responsive */
+    .footer-content {
+        gap: 16px;
+    }
+    
+    .footer-section {
+        gap: 10px;
+    }
+    
+    .footer-text {
+        font-size: 13px;
+    }
+    
+    .social-links {
+        gap: 12px;
+    }
+    
+    .social-link {
+        width: 40px;
+        height: 40px;
+        font-size: 16px;
+    }
+}
+
+@media (max-width: 360px) {
+    .android-header {
+        padding: 10px 12px;
+    }
+
+    .hero-title {
+        font-size: 1.5rem;
+    }
+
+    .album-cover {
+        width: 60px;
+        height: 60px;
+    }
+
+    /* Ultra-compact footer */
+    .android-footer {
+        background: var(--secondary-bg);
+        border-top: 1px solid var(--border-color);
+        padding: 16px 16px;
+        text-align: center;
+    }
+
+    .footer-content {
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+        align-items: center;
+        max-width: 1200px;
+        margin: 0 auto;
+    }
+
+    .footer-section {
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+        align-items: center;
+    }
+
+    .footer-text {
+        color: var(--text-muted);
+        font-size: 11px;
+        margin: 0;
+    }
+
+    .social-links {
+        display: flex;
+        gap: 10px;
+        align-items: center;
+    }
+
+    .social-link {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 32px;
+        height: 32px;
+        background: var(--card-bg);
+        border: 1px solid var(--border-color);
+        border-radius: 50%;
+        color: var(--text-secondary);
+        text-decoration: none;
+        transition: all 0.3s ease;
+        font-size: 12px;
+    }
+
+    .social-link .fa-facebook-f { font-size: 11px; }
+    .social-link .fa-github { font-size: 12px; }
+}

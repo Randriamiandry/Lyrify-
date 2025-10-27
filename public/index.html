@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lyrify - Lyrics Search</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <header class="android-header">
+            <div class="logo">
+                <div class="logo-icon">🎵</div>
+                <span class="logo-text">Lyrify</span>
+            </div>
+        </header>
+
+        <main class="android-main">
+            <section class="hero-section">
+                <h1 class="hero-title">Find the <span class="gradient-text">lyrics</span></h1>
+                <p class="hero-subtitle">Search for lyrics of your favorite songs</p>
+                
+                <div class="search-container">
+                    <div class="search-box">
+                        <input 
+                            type="text" 
+                            id="searchInput" 
+                            placeholder="Artist - Title (ex: Kalash - Mwaka Moon)"
+                            autocomplete="off"
+                        >
+                        <button id="searchBtn" class="search-button">🔍</button>
+                    </div>
+                    <div class="search-examples">
+                        <div class="example-tags">
+                            <span class="example-tag">Kalash - Mwaka Moon</span>
+                            <span class="example-tag">2pac - Dear mama</span>
+                            <span class="example-tag">Zkr - Les gentils bandit</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="results-section" id="resultsSection">
+                <div class="song-card">
+                    <div class="song-header">
+                        <div class="song-info">
+                            <div class="album-cover">
+                                <img id="albumImage" src="" alt="Album cover">
+                                <div class="image-placeholder" id="imagePlaceholder">🎵</div>
+                            </div>
+                            <div class="song-details">
+                                <h3 id="songTitleResult"></h3>
+                                <p id="artistNameResult"></p>
+                            </div>
+                        </div>
+                        <button id="copyLyricsBtn" class="copy-button">📋 Copy</button>
+                    </div>
+
+                    <div class="lyrics-section">
+                        <div class="lyrics-container">
+                            <pre id="lyricsText" class="lyrics-content"></pre>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="history-section">
+                <div class="history-header">
+                    <h3>Recent searches</h3>
+                    <button id="clearHistoryBtn" class="clear-history-btn">Clear</button>
+                </div>
+                <div id="historyList" class="history-list">
+                    <!-- search history here -->
+                </div>
+            </section>
+        </main>
+
+        <!-- Footer -->
+        <footer class="android-footer">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <p class="footer-text">&copy; 2025 Lyrify - Find your song lyrics</p>
+                    <p class="footer-text">Miko - ATHANASIUS</p>
+                </div>
+                
+                <div class="social-links">
+                    <a href="https://www.facebook.com/Randriamiandry206" target="_blank" class="social-link" aria-label="Facebook">
+                        <i class="fab fa-facebook-f"></i>
+                    </a>
+                    <a href="https://github.com/Randriamiandry" target="_blank" class="social-link" aria-label="GitHub">
+                        <i class="fab fa-github"></i>
+                    </a>
+                    
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <div id="notification" class="android-notification"></div>
+    <script src="script.js"></script>
+</body>
+</html>
